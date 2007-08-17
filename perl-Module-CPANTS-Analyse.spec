@@ -1,6 +1,6 @@
 %define module  Module-CPANTS-Analyse
 %define name    perl-%{module}
-%define version 0.69
+%define version 0.72
 %define release %mkrel 1
 
 Name:           %{name}
@@ -15,6 +15,8 @@ Source:         http://www.cpan.org/modules/by-module/Module/%{module}-%{version
 BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(Test::Deep)
+BuildRequires:  perl(Test::YAML::Meta)
+BuildRequires:  perl(Array::Diff)
 BuildRequires:  perl(Archive::Any)
 BuildRequires:  perl(Module::Pluggable)
 BuildRequires:  perl(Module::ExtractUse)
