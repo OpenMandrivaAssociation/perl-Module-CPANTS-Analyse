@@ -1,6 +1,6 @@
 %define module  Module-CPANTS-Analyse
 %define name    perl-%{module}
-%define version 0.73
+%define version 0.75
 %define release %mkrel 1
 
 Name:           %{name}
@@ -25,6 +25,7 @@ BuildRequires:  perl(CPAN::DistnameInfo)
 BuildRequires:  perl(Class::Accessor)
 BuildRequires:  perl(IO::Capture::Stdout)
 BuildRequires:  perl(YAML)
+BuildRequires:  perl(YAML::Syck)
 BuildRequires:  perl(IO::Zlib)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
