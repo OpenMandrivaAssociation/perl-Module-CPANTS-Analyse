@@ -29,7 +29,6 @@ BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
 BuildRequires:  perl(IO::Zlib)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description 
 Kwalitee is an automatically-measurable gauge of how good your software is.
