@@ -1,16 +1,16 @@
 %define module  Module-CPANTS-Analyse
 %define name    perl-%{module}
-%define version 0.75
+%define version 0.77
 %define release %mkrel 1
 
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
-Summary:        CPAN module testing
+Summary:        Generate Kwalitee ratings for a distribution
 License:        GPL or Artistic
 Group:          Development/Perl
 Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Module/%{module}-%{version}.tar.bz2
+Source:         http://www.cpan.org/modules/by-module/Module/%{module}-%{version}.tar.gz
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
