@@ -28,6 +28,7 @@ BuildRequires:  perl(IO::Capture::Stdout)
 BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
 BuildRequires:  perl(IO::Zlib)
+BuildRequires:  perl(Software::LicenseUtils)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
