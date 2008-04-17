@@ -30,6 +30,7 @@ BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
 BuildRequires:  perl(IO::Zlib)
 BuildRequires:  perl(Software::LicenseUtils)
+BuildRequires:  perl(List::MoreUtils)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
