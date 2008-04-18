@@ -32,6 +32,7 @@ BuildRequires:  perl(IO::Zlib)
 BuildRequires:  perl(Software::LicenseUtils)
 BuildRequires:  perl(File::Find::Rule)
 BuildRequires:  perl(List::MoreUtils)
+BuildRequires:  perl(Readonly)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
