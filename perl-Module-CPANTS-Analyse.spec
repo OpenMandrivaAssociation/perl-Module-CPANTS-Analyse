@@ -33,6 +33,7 @@ BuildRequires:  perl(Software::LicenseUtils)
 BuildRequires:  perl(File::Find::Rule)
 BuildRequires:  perl(List::MoreUtils)
 BuildRequires:  perl(Readonly)
+BuildRequires:  perl(File::Slurp)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
