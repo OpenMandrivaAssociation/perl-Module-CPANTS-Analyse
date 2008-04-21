@@ -18,6 +18,7 @@ BuildRequires:  perl-version
 BuildRequires:  perl(Test::Deep)
 BuildRequires:  perl(Test::YAML::Meta)
 BuildRequires:  perl(Test::NoWarnings)
+BuildRequires:  perl(Test::Warn)
 BuildRequires:  perl(Array::Diff)
 BuildRequires:  perl(Archive::Any)
 BuildRequires:  perl(Module::Pluggable)
