@@ -1,6 +1,6 @@
 %define module  Module-CPANTS-Analyse
 %define name    perl-%{module}
-%define version 0.81
+%define version 0.82
 %define release %mkrel 1
 
 Name:           %{name}
@@ -35,6 +35,7 @@ BuildRequires:  perl(File::Find::Rule)
 BuildRequires:  perl(List::MoreUtils)
 BuildRequires:  perl(Readonly)
 BuildRequires:  perl(File::Slurp)
+BuildRequires:  perl(Text::CSV_XS)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
