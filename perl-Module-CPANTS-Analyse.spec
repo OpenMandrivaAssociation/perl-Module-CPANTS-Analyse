@@ -36,6 +36,7 @@ BuildRequires:  perl(List::MoreUtils)
 BuildRequires:  perl(Readonly)
 BuildRequires:  perl(File::Slurp)
 BuildRequires:  perl(Text::CSV_XS)
+BuildRequires:  perl(LWP::Simple)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
