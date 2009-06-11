@@ -1,6 +1,6 @@
 %define module  Module-CPANTS-Analyse
 %define name    perl-%{module}
-%define version 0.82
+%define version 0.83
 %define release %mkrel 1
 
 Name:           %{name}
