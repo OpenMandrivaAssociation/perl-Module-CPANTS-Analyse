@@ -1,44 +1,44 @@
-%define module  Module-CPANTS-Analyse
-%define name    perl-%{module}
-%define version 0.83
-%define release %mkrel 1
+%define upstream_name    Module-CPANTS-Analyse
+%define upstream_version 0.85
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           perl-%{upstream_name}
+Version:        %perl_convert_version %{upstream_version}
+Release:        %mkrel 1
+
 Summary:        Generate Kwalitee ratings for a distribution
-License:        GPL or Artistic
+License:        GPL+ or Artistic
 Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Module/%{module}-%{version}.tar.gz
+Url:            http://search.cpan.org/dist/%{upstream_name}
+Source0:        http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
-BuildRequires:  perl-version
+BuildRequires:  perl(Archive::Any)
+BuildRequires:  perl(Array::Diff)
+BuildRequires:  perl(Class::Accessor)
+BuildRequires:  perl(CPAN::DistnameInfo)
+BuildRequires:  perl(File::Find::Rule)
+BuildRequires:  perl(File::Slurp)
+BuildRequires:  perl(IO::Capture::Stdout)
+BuildRequires:  perl(IO::Zlib)
+BuildRequires:  perl(List::MoreUtils)
+BuildRequires:  perl(LWP::Simple)
+BuildRequires:  perl(Module::ExtractUse)
+BuildRequires:  perl(Module::Pluggable)
+BuildRequires:  perl(Pod::Simple)
+BuildRequires:  perl(Readonly)
+BuildRequires:  perl(Software::LicenseUtils)
 BuildRequires:  perl(Test::Deep)
-BuildRequires:  perl(Test::YAML::Meta)
 BuildRequires:  perl(Test::NoWarnings)
 BuildRequires:  perl(Test::Warn)
-BuildRequires:  perl(Array::Diff)
-BuildRequires:  perl(Archive::Any)
-BuildRequires:  perl(Module::Pluggable)
-BuildRequires:  perl(Module::ExtractUse)
-BuildRequires:  perl(Pod::Simple)
-BuildRequires:  perl(CPAN::DistnameInfo)
-BuildRequires:  perl(Class::Accessor)
-BuildRequires:  perl(IO::Capture::Stdout)
+BuildRequires:  perl(Test::YAML::Meta)
+BuildRequires:  perl(Text::CSV_XS)
 BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
-BuildRequires:  perl(IO::Zlib)
-BuildRequires:  perl(Software::LicenseUtils)
-BuildRequires:  perl(File::Find::Rule)
-BuildRequires:  perl(List::MoreUtils)
-BuildRequires:  perl(Readonly)
-BuildRequires:  perl(File::Slurp)
-BuildRequires:  perl(Text::CSV_XS)
-BuildRequires:  perl(LWP::Simple)
+BuildRequires:  perl(version)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 Kwalitee is an automatically-measurable gauge of how good your software is.
@@ -54,7 +54,7 @@ quality as well.
 Test::Kwalitee and a short test file will do this for you automatically.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -76,5 +76,4 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{perl_vendorlib}/Module
 %{_mandir}/*/*
-
 
