@@ -1,46 +1,51 @@
 %define upstream_name    Module-CPANTS-Analyse
-%define upstream_version 0.85
+%define upstream_version 0.86
 
-Name:           perl-%{upstream_name}
-Version:        %perl_convert_version %{upstream_version}
-Release:        %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
 
-Summary:        Generate Kwalitee ratings for a distribution
-License:        GPL+ or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{upstream_name}
-Source0:        http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Generate Kwalitee ratings for a distribution
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
 
-%if %{mdkversion} < 1010
-BuildRequires:  perl-devel
-%endif
-BuildRequires:  perl(Archive::Any)
-BuildRequires:  perl(Array::Diff)
-BuildRequires:  perl(Class::Accessor)
-BuildRequires:  perl(CPAN::DistnameInfo)
-BuildRequires:  perl(File::Find::Rule)
-BuildRequires:  perl(File::Slurp)
-BuildRequires:  perl(IO::Capture::Stdout)
-BuildRequires:  perl(IO::Zlib)
-BuildRequires:  perl(List::MoreUtils)
-BuildRequires:  perl(LWP::Simple)
-BuildRequires:  perl(Module::ExtractUse)
-BuildRequires:  perl(Module::Pluggable)
-BuildRequires:  perl(Pod::Simple)
-BuildRequires:  perl(Readonly)
-BuildRequires:  perl(Software::LicenseUtils)
-BuildRequires:  perl(Test::Deep)
-BuildRequires:  perl(Test::NoWarnings)
-BuildRequires:  perl(Test::Warn)
-BuildRequires:  perl(Test::YAML::Meta)
-BuildRequires:  perl(Text::CSV_XS)
-BuildRequires:  perl(YAML)
-BuildRequires:  perl(YAML::Syck)
-BuildRequires:  perl(version)
-BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Archive::Any) >= 0.60.0
+BuildRequires:	perl(Archive::Tar) >= 1.480.0
+BuildRequires:	perl(Array::Diff) >= 0.40.0
+BuildRequires:	perl(CPAN::DistnameInfo) >= 0.60.0
+BuildRequires:	perl(Class::Accessor) >= 0.190.0
+BuildRequires:	perl(Cwd)
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(ExtUtils::Manifest)
+BuildRequires:	perl(File::Find::Rule)
+BuildRequires:	perl(File::Slurp)
+BuildRequires:	perl(File::chdir)
+BuildRequires:	perl(IO::Capture) >= 0.50.0
+BuildRequires:	perl(LWP::Simple)
+BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(Module::ExtractUse) >= 0.180.0
+BuildRequires:	perl(Module::Pluggable) >= 2.960.0
+BuildRequires:	perl(Module::Signature)
+BuildRequires:	perl(Pod::Simple::Checker) >= 2.20.0
+BuildRequires:	perl(Readonly)
+BuildRequires:	perl(Set::Scalar)
+BuildRequires:	perl(Software::License) >= 0.3.0
+BuildRequires:	perl(Test::CPAN::Meta::YAML::Version)
+BuildRequires:	perl(Test::Deep)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Test::NoWarnings)
+BuildRequires:	perl(Test::Warn) >= 0.110.0
+BuildRequires:	perl(Text::CSV_XS) >= 0.450.0
+BuildRequires:	perl(YAML::Any) >= 0.810.0
+BuildRequires:	perl(YAML::XS)
+BuildRequires:	perl(version) >= 0.730.0
+BuildArch:	noarch
 
-%description 
+%description
 Kwalitee is an automatically-measurable gauge of how good your software is.
 That's very different from quality, which a computer really can't measure in a
 general sense. (If you can, you've solved a hard problem in computer science.)
@@ -57,23 +62,19 @@ Test::Kwalitee and a short test file will do this for you automatically.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+#make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
-%doc Changes README
+%doc AUTHORS Changes META.json META.yml MYMETA.yml README SIGNATURE TODO
 %{_bindir}/*
 %{perl_vendorlib}/Module
 %{_mandir}/*/*
+
 
