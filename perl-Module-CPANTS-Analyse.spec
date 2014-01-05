@@ -1,5 +1,5 @@
 %define upstream_name    Module-CPANTS-Analyse
-%define upstream_version 0.86
+%define upstream_version 0.9002
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Generate Kwalitee ratings for a distribution
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Module/Module-CPANTS-Analyse-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Archive::Any) >= 0.60.0
@@ -76,5 +76,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{_bindir}/*
 %{perl_vendorlib}/Module
 %{_mandir}/*/*
+
 
 
