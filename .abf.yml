@@ -1,2 +1,5 @@
+removed_sources:
+  Module-CPANTS-Analyse-0.86.tar.gz: 0326f0ac478539450d7a474b7494be67ec40ac6f
+  Module-CPANTS-Analyse-0.9002.tar.gz: 744d9f366a7caf1127a47d05901ea73763d8e2e7
 sources:
-  "Module-CPANTS-Analyse-0.86.tar.gz": 0326f0ac478539450d7a474b7494be67ec40ac6f
+  Module-CPANTS-Analyse-0.92.tar.gz: 338311606a1d4347d961b4e33b5d2dd20b10ede6
