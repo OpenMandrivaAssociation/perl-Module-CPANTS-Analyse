@@ -9,7 +9,7 @@ Summary:	Generate Kwalitee ratings for a distribution
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Module/Module-CPANTS-Analyse-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
